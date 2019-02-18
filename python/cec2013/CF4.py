@@ -1,10 +1,10 @@
 ###############################################################################
 # Version: 1.1
-# Last modified on: 3 April, 2016 
+# Last modified on: 3 April, 2016
 # Developers: Michael G. Epitropakis
-#      email: m_(DOT)_epitropakis_(AT)_lancaster_(DOT)_ac_(DOT)_uk 
+#      email: m_(DOT)_epitropakis_(AT)_lancaster_(DOT)_ac_(DOT)_uk
 ###############################################################################
-from cfunction import *
+from .cfunction import *  # explict relative import for python => 3.5
 import numpy as np
 
 class CF4(CFunction):
@@ -16,15 +16,15 @@ class CF4(CFunction):
 		self._CFunction__bias_ = np.zeros( self._CFunction__nofunc_ )
 		self._CFunction__weight_ = np.zeros( self._CFunction__nofunc_ )
 		self._CFunction__lambda_ = np.array( [4.0, 1.0, 4.0, 1.0, 1.0/10.0, 1.0/5.0, 1.0/10.0, 1.0/40.0] )
-		
+
 		# Lower/Upper Bounds
 		self._CFunction__lbound_ = -5.0 * np.ones( dim )
 		self._CFunction__ubound_ = 5.0 * np.ones( dim )
 
 		# Load optima
-		o = np.loadtxt('data/optima.dat') 
+		o = np.loadtxt('data/optima.dat')
 		if o.shape[1] >= dim:
-			self._CFunction__O_ = o[:self._CFunction__nofunc_, :dim] 
+			self._CFunction__O_ = o[:self._CFunction__nofunc_, :dim]
 		else: # randomly initialize
 			self._CFunction__O_ = self._CFunction__lbound_ + (self._CFunction__ubound_ - self._CFunction__lbound_) * np.random.rand( (self._CFunction__nofunc_, dim) )
 

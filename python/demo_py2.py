@@ -1,15 +1,15 @@
 #!/usr/bin/env python
 ###############################################################################
 # Version: 1.1
-# Last modified on: 3 April, 2016
+# Last modified on: 3 April, 2016 
 # Developers: Michael G. Epitropakis
-#      email: m_(DOT)_epitropakis_(AT)_lancaster_(DOT)_ac_(DOT)_uk
+#      email: m_(DOT)_epitropakis_(AT)_lancaster_(DOT)_ac_(DOT)_uk 
 ###############################################################################
 from cec2013.cec2013 import *
 import numpy as np
 
 def main():
-	print(70*"=")
+	print 70*"="
 	# Demonstration of all functions
 	for i in range(1,21):
 		# Create function
@@ -20,9 +20,9 @@ def main():
 
 		# Evaluate :-)
 		value = f.evaluate(x)
-		print("f", i, "(", x, ") = ", f.evaluate(x))
+		print "f", i, "(", x, ") = ", f.evaluate(x)
 
-	print(70*"=")
+	print 70*"="
 	# Demonstration of using how_many_goptima function
 	for i in range(1,21):
 		# Create function
@@ -48,10 +48,10 @@ def main():
 		# Calculate how many global optima are in the population
 		accuracy = 0.001
 		count, seeds = how_many_goptima(X, f, accuracy)
-		print("In the current population there exist", count, "global optimizers.")
-		print("Global optimizers:", seeds)
+		print "In the current population there exist", count, "global optimizers."
+		print "Global optimizers:", seeds
 
-	print(70*"=")
+	print 70*"="
 
 if __name__ == "__main__":
 	main()

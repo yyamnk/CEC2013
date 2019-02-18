@@ -7,12 +7,12 @@
 from scipy.spatial.distance import pdist, squareform
 import numpy as np
 import math
-from .functions import *  # explict relative import for python => 3.5
-from .cfunction import *  # explict relative import for python => 3.5
-from .CF1 import *  # explict relative import for python => 3.5
-from .CF2 import *  # explict relative import for python => 3.5
-from .CF3 import *  # explict relative import for python => 3.5
-from .CF4 import *  # explict relative import for python => 3.5
+from functions import *
+from cfunction import *
+from CF1 import *
+from CF2 import *
+from CF3 import *
+from CF4 import *
 
 class CEC2013(object):
 	__nfunc_ = -1

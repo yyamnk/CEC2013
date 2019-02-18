@@ -1,13 +1,13 @@
 ###############################################################################
 # Version: 1.1
-# Last modified on: 3 April, 2016 
+# Last modified on: 3 April, 2016
 # Developers: Michael G. Epitropakis
-#      email: m_(DOT)_epitropakis_(AT)_lancaster_(DOT)_ac_(DOT)_uk 
+#      email: m_(DOT)_epitropakis_(AT)_lancaster_(DOT)_ac_(DOT)_uk
 ###############################################################################
 import numpy as np
 import math
 ###############################################################################
-# Basic Benchmark functions 
+# Basic Benchmark functions
 ###############################################################################
 
 ###############################################################################
@@ -42,7 +42,7 @@ def five_uneven_peak_trap(x = None):
 # F2: Equal Maxima
 # Variable ranges: x in [0, 1]
 # No. of global peaks: 5
-# No. of local peaks:  0. 
+# No. of local peaks:  0.
 def equal_maxima(x = None):
 
     if x==None:
@@ -54,9 +54,9 @@ def equal_maxima(x = None):
 # F3: Uneven Decreasing Maxima
 # Variable ranges: x in [0, 1]
 # No. of global peaks: 1
-# No. of local peaks:  4. 
+# No. of local peaks:  4.
 def uneven_decreasing_maxima(x = None):
-    
+
 	if x == None:
 		return None
 
@@ -68,8 +68,8 @@ def uneven_decreasing_maxima(x = None):
 # No. of global peaks: 4
 # No. of local peaks:  0.
 def himmelblau(x = None):
-    
-	if x==None:
+
+	if x is None:
 		return None
 
 	result = 200 - (x[0]**2 + x[1] - 11)**2 - (x[0] + x[1]**2 - 7)**2
@@ -82,7 +82,7 @@ def himmelblau(x = None):
 # No. of local peaks:  2.
 def six_hump_camel_back(x = None):
 
-	if x==None:
+	if x is None:
 		return None
 
 	x2 = x[0]**2
@@ -102,7 +102,7 @@ def six_hump_camel_back(x = None):
 # No. of local peaks: many
 def shubert(x = None):
 
-	if x==None:
+	if x is None:
 		return None
 
 	i = 0
@@ -125,7 +125,7 @@ def shubert(x = None):
 # No. of local optima:  0.
 def vincent(x = None):
 
-	if x==None:
+	if x is None:
 		return None
 
 	result = 0
@@ -142,11 +142,11 @@ def vincent(x = None):
 # No. of local peaks:  0.
 def modified_rastrigin_all(x = None):
 
-	if x==None:
+	if x is None:
 		return None
 
 	result = 0
-	D = len(x)    
+	D = len(x)
 	if D==2:
 		k = [3, 4]
 	elif D==8:
@@ -155,5 +155,5 @@ def modified_rastrigin_all(x = None):
 		k = [1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 4]
 
 	for i in range (0, D):
-		result += (10 + 9*math.cos(2*math.pi*k[i]*x[i]))        
+		result += (10 + 9*math.cos(2*math.pi*k[i]*x[i]))
 	return -result
