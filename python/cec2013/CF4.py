@@ -6,6 +6,9 @@
 ###############################################################################
 from .cfunction import *  # explict relative import for python => 3.5
 import numpy as np
+import os
+
+dir_cec = os.path.dirname(__file__)
 
 class CF4(CFunction):
 	def __init__(self, dim):
@@ -22,7 +25,7 @@ class CF4(CFunction):
 		self._CFunction__ubound_ = 5.0 * np.ones( dim )
 
 		# Load optima
-		o = np.loadtxt('data/optima.dat')
+		o = np.loadtxt(dir_cec + '/data/optima.dat')
 		if o.shape[1] >= dim:
 			self._CFunction__O_ = o[:self._CFunction__nofunc_, :dim]
 		else: # randomly initialize
@@ -30,7 +33,7 @@ class CF4(CFunction):
 
 		# Load M_: Rotation matrices
 		if dim == 2 or dim == 3 or dim == 5 or dim == 10 or dim == 20:
-			fname = "data/CF4_M_D" + str(dim) + ".dat"
+			fname = dir_cec + "/data/CF4_M_D" + str(dim) + ".dat"
 			self._CFunction__load_rotmat(fname)
 		else:
 			# M_ Identity matrices # TODO: Generate dimension independent rotation matrices
