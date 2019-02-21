@@ -91,7 +91,7 @@ def six_hump_camel_back(x = None):
 	expr1 = (4.0 - 2.1*x2 + x4/3.0)*x2
 	expr2 = x[0]*x[1]
 	expr3 = (4.0*y2 - 4.0)*y2
-	return -1.0*(expr1+expr2+expr3)
+	return -4.0*(expr1+expr2+expr3)
     #result = (-4)*((4 - 2.1*(x[0]**2) + (x[0]**4)/3.0)*(x[0]**2) + x[0]*x[1] + (4*(x[1]**2) - 4)*(x[1]**2))
     #return result
 
